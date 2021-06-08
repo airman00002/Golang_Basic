@@ -43,8 +43,8 @@ func main() {
 			time.Sleep(5 * time.Second)
 			checkLink(link, c)
 		}(l) //*ส่งผ่าน l เป็น argument ของ func
-	}
 
+	}
 }
 
 func checkLink(link string, c chan string) {
