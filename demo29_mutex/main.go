@@ -28,6 +28,8 @@ func (c *SafeCounter) Inc(key string) { //*Inc เพิ่มค่า count
 	c.mux.Unlock()
 }
 
+//? ในที่นี้มีการทำงานแบบ parallelism การทำงานแบบขนาน จึงต้อง Lock ให้ทำงานบาง func ให้เสร็จก่อน
+
 // Value returns the current value of the counter for the given key.
 func (c *SafeCounter) Value(key string) int {
 	c.mux.Lock() //*Lock ว่ากำลังจะดึงค่า ห้ามเขียนข้อมูลเข้าไป
